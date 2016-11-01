@@ -1,0 +1,7 @@
+{{model.parentCommittee}}
+{{#each model.parentCommittee as |committees|}}
+  <h1>Sub commitees of: {{committees.name}} </h1>
+{{/each}}
+{{#each model.subcommittees as |committees|}}
+  <h3>{{committees.name}}</h3>
+{{/each}}

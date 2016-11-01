@@ -14,10 +14,18 @@ export default Ember.Component.extend({
       };
       this.sendAction('chamberLookup', params);
     },
+    committeeLookup() {
+      var params = {
+        committee_id: this.get('committees.tagType')
+      };
+      console.log(params);
+      this.sendAction('committeeLookup', params);
+    },
     selectTagType(value, component) {
       this.set('chambers.tagType', value);
     },
     selectCommiteeType(value, component) {
+      console.log(value);
       this.set('committees.tagType', value);
     },
   }
