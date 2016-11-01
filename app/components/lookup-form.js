@@ -16,6 +16,9 @@ export default Ember.Component.extend({
     },
     selectTagType(value, component) {
       this.set('chambers.tagType', value);
-    }
+    },
+    selectCommiteeType(value, component) {
+      this.set('committees.tagType', value);
+    },
   }
 });

@@ -23,3 +23,19 @@
 
   <button class="btn btn-primary" {{action 'chamberLookup'}}>Submit</button>
 </form>
+
+<h3>Lookup Subcommitees by Committee</h3>
+<form>
+  <div class="form-group">
+    <label for="chamber">Chamber</label>
+    {{#x-select class="form-control" action='selectCommiteeType' id="committees-select" value=committees.tagType}}
+      {{#each committees as |type|}}
+        {{#x-option value=type.name}}
+          {{type.name}}
+        {{/x-option}}
+      {{/each}}
+    {{/x-select}}
+  </div>
+
+  <button class="btn btn-primary" {{action 'chamberLookup'}}>Submit</button>
+</form>
