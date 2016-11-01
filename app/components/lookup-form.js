@@ -7,6 +7,15 @@ export default Ember.Component.extend({
         zip: this.get('zip')
       };
       this.sendAction('zipLookup', params);
+    },
+    chamberLookup() {
+      var params = {
+        chamber: this.get('chambers.tagType')
+      };
+      this.sendAction('chamberLookup', params);
+    },
+    selectTagType(value, component) {
+      this.set('chambers.tagType', value);
     }
   }
 });

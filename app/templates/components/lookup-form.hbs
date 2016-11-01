@@ -1,10 +1,25 @@
-<h1>Legislator Lookup</h1>
-
+<h3>Legislator Lookup</h3>
 <form>
   <div class="form-group">
     <label for="zip">Zip</label>
-    {{input value=zip id="zip"}}
+    {{input class="form-control" value=zip id="zip"}}
   </div>
 
   <button class="btn btn-primary" {{action 'zipLookup'}}>Submit</button>
+</form>
+
+<h3>Lookup comitee by Chamber</h3>
+<form>
+  <div class="form-group">
+    <label for="chamber">Chamber</label>
+    {{#x-select class="form-control" action='selectTagType' id="tag-type-select" value=chambers.tagType}}
+      {{#each chambers as |type|}}
+        {{#x-option value=type}}
+          {{type}}
+        {{/x-option}}
+      {{/each}}
+    {{/x-select}}
+  </div>
+
+  <button class="btn btn-primary" {{action 'chamberLookup'}}>Submit</button>
 </form>
